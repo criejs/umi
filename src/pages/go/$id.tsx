@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { history } from 'umi';
 import { useAppSelector, useAppDispatch } from '@/store';
 import {
   decrement,
@@ -42,6 +43,8 @@ const Page = () => {
         async
       </button>
       {/* 这里省略了额外的 render 代码 */}
+
+      <span onClick={() => history.push('/docs')}>back</span>
     </div>
   );
 };

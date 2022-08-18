@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { history } from 'umi';
-import { useAppSelector, useAppDispatch } from '@/store';
+import { useAppDispatch, useAppSelector } from '@/store';
 import {
   decrement,
   increment,
-  incrementByAmount,
   incrementAsync,
-  selectCount
+  incrementByAmount,
+  selectCount,
 } from '@/store/counter';
+import { history } from 'umi';
 
 const Page = () => {
   const count = useAppSelector(selectCount);
@@ -16,30 +15,18 @@ const Page = () => {
   return (
     <div>
       <div>
-        <button 
-          type="button" 
-          onClick={() => dispatch(increment())}
-        >
+        <button type="button" onClick={() => dispatch(increment())}>
           +
         </button>
         <span>{count}</span>
-        <button
-          type="button"
-          onClick={() => dispatch(decrement())}
-        >
+        <button type="button" onClick={() => dispatch(decrement())}>
           -
         </button>
       </div>
-      <button
-        type="button"
-        onClick={() => dispatch(incrementByAmount(10))}
-      >
+      <button type="button" onClick={() => dispatch(incrementByAmount(10))}>
         +10
       </button>
-      <button
-        type="button"
-        onClick={() => dispatch(incrementAsync(5))}
-      >
+      <button type="button" onClick={() => dispatch(incrementAsync(5))}>
         async
       </button>
       {/* 这里省略了额外的 render 代码 */}

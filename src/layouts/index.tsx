@@ -3,7 +3,7 @@ import styles from './index.less';
 
 export default function Layout() {
   return (
-    <div className={styles.navs}>
+    <div className={styles.nav}>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -13,7 +13,8 @@ export default function Layout() {
           <Link to="/docs">Docs</Link>
         </li>
         <li>
-          <a href="https://github.com/umijs/umi">Github</a>
+          {/* 页面重新加载了 */}
+          <a href="/go/1">go</a>
         </li>
       </ul>
       <Outlet />

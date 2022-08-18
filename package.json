@@ -1,26 +1,50 @@
 {
   "private": true,
-  "author": "zhaoxiaoqiong <w_zhaoxiaoqiong@xiwang.com>",
+  "author": "xhf <w_xihengfei@xiwang.com>",
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",
+    "build-dev": "cross-env mode=dev umi build",
     "postinstall": "umi setup",
+    "lint": "umi lint",
     "setup": "umi setup",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "prepare": "husky install",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.4",
+    "react-helmet": "^6.1.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
     "umi": "^4.0.13"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13",
+    "@types/jest": "^27",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/react-helmet": "^6.1.5",
+    "@types/testing-library__jest-dom": "^5.14.5",
     "@umijs/lint": "^4.0.13",
+    "cross-env": "^7.0.3",
     "eslint": "^8.22.0",
+    "husky": "^8.0.0",
+    "jest": "^27",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2",
+    "prettier-plugin-organize-imports": "^2",
+    "prettier-plugin-packagejson": "^2",
     "redux-devtools": "^3.7.0",
     "stylelint": "^14.10.0",
-    "typescript": "^4.7.4"
+    "ts-node": "^10",
+    "typescript": "^4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,less}": [
+      "umi lint"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

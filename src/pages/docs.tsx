@@ -1,8 +1,14 @@
+import { Helmet } from 'react-helmet';
 const Page = () => {
   return (
-    <div>
-      <p>This is umi docs.</p>
-    </div>
+    <>
+      <Helmet>
+        <title>docs</title>
+      </Helmet>
+      <div>
+        <p>This is umi docs.</p>
+      </div>
+    </>
   );
 };
 

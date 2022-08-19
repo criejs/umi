@@ -1,7 +1,11 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  vite: {},
+  define: {
+    'process.env': process.env,
+  },
+  // vite调试，build线上务必webpack
+  // vite: {},
   clickToComponent: {},
   proxy: {
     '/api': {

@@ -2,9 +2,10 @@
   "private": true,
   "author": "xhf <w_xihengfei@xiwang.com>",
   "scripts": {
-    "dev": "umi dev",
-    "build": "umi build",
+    "dev": "cross-env mode=dev umi dev",
     "build-dev": "cross-env mode=dev umi build",
+    "build": "umi build",
+    "preview": "umi preview",
     "postinstall": "umi setup",
     "lint": "umi lint",
     "setup": "umi setup",

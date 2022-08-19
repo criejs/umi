@@ -23,7 +23,9 @@ interface IRouteParams {
   location: any;
   action: any;
 }
-
+if (process.env.mode === 'dev') {
+  console.log(process.env.mode);
+}
 export function onRouteChange(params: IRouteParams) {
   console.log('onRouteChange', params);
 }

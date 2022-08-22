@@ -6,12 +6,13 @@ import {
   incrementByAmount,
   selectCount,
 } from '@/store/counter';
-import { history } from 'umi';
+import { history, useParams } from 'umi';
 
 const Page = () => {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
-
+  const params = useParams();
+  console.log(params);
   return (
     <div>
       <div>
@@ -31,7 +32,12 @@ const Page = () => {
       </button>
       {/* 这里省略了额外的 render 代码 */}
 
-      <span onClick={() => history.push('/docs')}>back</span>
+      <button type="button" onClick={() => history.push('/docs')}>
+        back
+      </button>
+      <button type="button" onClick={() => history.push('/go/2')}>
+        go/2
+      </button>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { incrementAsync, selectCount } from '@/store/test';
-import hocAuth from '@/wrappers/hocAuth';
+import auth from '@/wrappers/auth';
 
 const Page = () => {
   const count = useAppSelector(selectCount);
@@ -14,7 +14,7 @@ const Page = () => {
   return (
     <>
       <Helmet>
-        <title>docs</title>
+        <title>docs {count}</title>
       </Helmet>
       <div>
         <p>This is umi docs.{count}</p>
@@ -23,4 +23,4 @@ const Page = () => {
   );
 };
 
-export default hocAuth(Page);
+export default auth(Page);

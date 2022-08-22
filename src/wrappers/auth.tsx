@@ -22,9 +22,11 @@ export default (Page: React.FC) => {
       }, 2000);
     }, []);
 
+    // 校验权限
     if (!count) {
       return <div>is not login</div>;
     }
+    // 校验通过，渲染页面
     return <Page {...props} />;
   };
 };

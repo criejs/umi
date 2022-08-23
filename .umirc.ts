@@ -5,7 +5,7 @@ export default defineConfig({
     'process.env': process.env,
   },
   // vite调试，build线上务必webpack
-  // vite: {},
+  vite: {},
   clickToComponent: {},
   proxy: {
     '/api': {

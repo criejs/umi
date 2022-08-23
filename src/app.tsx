@@ -1,13 +1,8 @@
 import store from '@/store';
-import { StrictMode } from 'React';
 import { Provider } from 'react-redux';
 
 export function rootContainer(root: JSX.Element): JSX.Element {
-  return (
-    <StrictMode>
-      <Provider store={store}>{root}</Provider>
-    </StrictMode>
-  );
+  return <Provider store={store}>{root}</Provider>;
 }
 
 // 渲染时权限校验

@@ -14,7 +14,7 @@ const Page = () => {
   return (
     <>
       <Helmet>
-        <title>docs {count}</title>
+        <title>docs</title>
       </Helmet>
       <div>
         <p>This is umi docs.{count}</p>

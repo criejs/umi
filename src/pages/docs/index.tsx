@@ -1,9 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/store';
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 
-import { incrementAsync, selectCount } from '@/store/test';
-import auth from '@/wrappers/auth';
+import { incrementAsync, selectCount } from '@/store/users';
 
 const Page = () => {
   const count = useAppSelector(selectCount);
@@ -13,9 +11,6 @@ const Page = () => {
   }, []);
   return (
     <>
-      <Helmet>
-        <title>docs {count}</title>
-      </Helmet>
       <div>
         <p>This is umi docs.{count}</p>
       </div>
@@ -23,4 +18,4 @@ const Page = () => {
   );
 };
 
-export default auth(Page);
+export default Page;

@@ -2,51 +2,36 @@
   "private": true,
   "author": "xhf <w_xihengfei@xiwang.com>",
   "scripts": {
-    "dev": "cross-env mode=dev umi dev",
-    "build-dev": "cross-env mode=dev umi build",
-    "build": "umi build",
-    "preview": "umi preview",
-    "postinstall": "umi setup",
-    "lint": "umi lint",
-    "setup": "umi setup",
-    "start": "npm run dev",
+    "dev": "cross-env mode=dev max dev",
+    "build-dev": "cross-env mode=dev max build",
+    "build": "max build",
+    "format": "prettier --cache --write .",
     "prepare": "husky install",
-    "test": "jest"
+    "postinstall": "max setup",
+    "setup": "max setup",
+    "start": "npm run dev"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.4",
+    "@ant-design/icons": "^4.7.0",
+    "@ant-design/pro-components": "^1.1.19",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@umijs/max": "^4.0.14",
+    "antd": "^4.22.7",
     "axios": "^0.27.2",
+    "classnames": "^2.3.1",
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.2",
-    "redux": "^4.2.0",
-    "umi": "^4.0.13"
+    "redux": "^4.2.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13",
-    "@types/jest": "^27",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "@types/react-helmet": "^6.1.5",
-    "@types/testing-library__jest-dom": "^5.14.5",
-    "@umijs/lint": "^4.0.13",
     "cross-env": "^7.0.3",
-    "eslint": "^8.22.0",
-    "husky": "^8.0.0",
-    "jest": "^27",
+    "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "prettier": "^2",
-    "prettier-plugin-organize-imports": "^2",
-    "prettier-plugin-packagejson": "^2",
-    "redux-devtools": "^3.7.0",
-    "stylelint": "^14.10.0",
-    "ts-node": "^10",
-    "typescript": "^4"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,less}": [
-      "umi lint"
-    ],
-    "**/*": "prettier --write --ignore-unknown"
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "typescript": "^4.7.4"
   }
 }

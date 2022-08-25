@@ -11,15 +11,14 @@ const instance = axios.create({
   },
 });
 
+interface IRes<T> {
+  data: T;
+  code: number;
+  msg: string;
+}
 // 添加请求拦截器
 instance.interceptors.request.use(
   function (conf: AxiosRequestConfig) {
-    // 在发送请求之前做些什么
-    /**
-    1、比如添加token之类的请求头信息
-    2、添加每次请求loading等
-  */
-
     if (conf.data) {
       conf.data.uuid = config.uuid;
     }
@@ -33,10 +32,11 @@ instance.interceptors.request.use(
 
 // 添加响应拦截器
 instance.interceptors.response.use(
-  function (response: AxiosResponse) {
+  function <T>(response: AxiosResponse<IRes<T>>):T{
     // 对响应数据做点什么
     /**
     1、集中处理响应数据（如错误码处理）
+
   */
     if (response?.data?.code !== 200) {
       alert(response?.data?.msg || '内部错误，请稍后重试');

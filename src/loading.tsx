@@ -1,3 +1,5 @@
+import { PageLoading } from '@ant-design/pro-components';
+
 export default function Foo() {
-  return <div>加载中</div>;
+  return <PageLoading tip="加载中" />;
 }

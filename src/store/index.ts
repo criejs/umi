@@ -1,12 +1,12 @@
 import { configureStore, ThunkAction, Action  } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useSelector, useDispatch } from 'react-redux'
 import counter from './counter';
-import test from './test';
+import users from './users';
 
 const store = configureStore({
   reducer: {
     counter,
-    test,
+    users,
   },
   devTools: process.env.NODE_ENV !== 'production'  // 不让生产环境调试
 });
